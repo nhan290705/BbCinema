@@ -1,0 +1,23 @@
+# Cấu hình IDE (IntelliJ, VS Code)
+.idea/
+*.iml
+.vscode/
+
+# Thư mục build
+out/
+bin/
+
+# Backend (Java / Maven / Gradle - nếu dùng trong BbCinema)
+target/
+build/
+*.class
+*.jar
+*.war
+
+# Frontend (Node.js, React, Vue... - trong thư mục frontend)
+node_modules/
+dist/
+.env
+.env.local
+npm-debug.log*
+yarn-debug.log*
