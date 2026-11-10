@@ -34,6 +34,9 @@ public class Seat {
     @Column(name = "grid_y", nullable = false)
     private Integer gridY;
 
+    @Column(name = "width_units")
+    private Integer widthUnits;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 30)
     private SeatStatus status = SeatStatus.AVAILABLE;

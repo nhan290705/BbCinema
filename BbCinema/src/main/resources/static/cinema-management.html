@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BBCinema · Rạp và sơ đồ ghế</title>
+  <link rel="stylesheet" href="/cinema-management.css">
+  <link rel="stylesheet" href="/seat-layout-editor.css">
+  <script src="/seat-layout-editor.js" defer></script>
+  <script src="/cinema-management.js" defer></script>
+<link rel="stylesheet" href="/admin.css"><script src="/admin-shell.js" defer></script></head>
+<body class="admin-workspace" data-admin-page="cinema">
+  <header class="topbar"><a class="brand" href="/cinema-management.html">BB<span>CINEMA</span></a><div class="account"><span id="account-label">Quản lý rạp và phòng chiếu</span><button id="logout" class="quiet" hidden>Đăng xuất</button></div></header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">HỆ THỐNG RẠP CHIẾU</p><h1>Rạp, phòng và sơ đồ ghế</h1><p>Chọn rạp và phòng để xem vị trí, loại ghế và tình trạng thiết bị.</p></div><a class="quiet link-button" href="/swagger-ui/index.html">Tài liệu API ↗</a></div>
+    <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+    <section id="login-panel" class="card login-card">
+      <div><p class="eyebrow">TÀI KHOẢN BBCINEMA</p><h2>Đăng nhập để tiếp tục</h2><p>Tài khoản đã đăng nhập có thể xem sơ đồ. Quản trị viên có thể cập nhật danh mục và trạng thái.</p></div>
+      <form id="login-form"><label>Email<input name="email" type="email" autocomplete="username" maxlength="120" required></label><label>Mật khẩu<input name="password" type="password" autocomplete="current-password" required></label><button type="submit">Đăng nhập</button></form>
+    </section>
+    <div id="workspace" hidden>
+      <section class="card filters" data-cinema-selectors aria-label="Chọn rạp và phòng">
+        <label>Tỉnh / thành<select id="province-select"><option value="">Tất cả tỉnh / thành</option></select></label>
+        <label>Rạp chiếu<select id="cinema-select"><option value="">Chọn rạp chiếu</option></select></label>
+        <label>Phòng chiếu<select id="auditorium-select" disabled><option value="">Chọn phòng chiếu</option></select></label>
+      </section>
+      <section id="seat-map" class="card map-card" data-workspace-section="seat-map">
+        <div data-legacy-seat-view>
+        <div class="section-heading"><div><p class="eyebrow">SƠ ĐỒ PHÒNG</p><h2 id="map-title">Chọn một phòng chiếu</h2><p id="map-subtitle">Các ghế được hiển thị theo đúng hàng và cột trong phòng.</p></div><span id="room-status" class="badge" hidden></span></div>
+        <p class="notice">Đây là tình trạng vật lý của ghế và phòng, không phải tình trạng đặt vé theo suất chiếu.</p>
+        <div id="legend" class="legend"><span><i class="standard"></i>Thường</span><span><i class="vip"></i>VIP</span><span><i class="couple"></i>Đôi</span><span><i class="broken"></i>Hỏng</span><span><i class="blocked"></i>Khóa</span><span><i class="aisle"></i>Lối đi</span></div>
+        <div class="screen">MÀN HÌNH</div>
+        <div class="map-scroll"><div id="seat-grid" class="seat-grid" role="group" aria-label="Sơ đồ ghế"></div><p id="map-empty" class="empty">Chọn rạp và phòng để xem sơ đồ.</p></div>
+        <div class="seat-details" id="seat-details" aria-live="polite">Chọn một ghế để xem thông tin.</div>
+        <form id="seat-status-form" class="inline-form admin-only" hidden><label>Trạng thái ghế đã chọn<select name="status"><option value="AVAILABLE">Hoạt động</option><option value="BROKEN">Hỏng</option><option value="BLOCKED">Khóa</option><option value="AISLE">Lối đi</option></select></label><button type="submit" id="save-seat" disabled>Cập nhật ghế</button></form>
+        </div>
+        <div id="seat-layout-editor" hidden></div>
+      </section>
+      <section id="admin-panel" class="admin-only" hidden>
+        <div class="section-heading"><div><p class="eyebrow">DÀNH CHO QUẢN TRỊ VIÊN</p><h2>Quản lý danh mục và cấu hình phòng</h2></div></div>
+        <div class="admin-grid">
+          <details id="provinces" data-workspace-section="provinces" class="card" open><summary>Tạo tỉnh / thành</summary><form id="province-form"><label>Tên tỉnh / thành<input name="provinceName" maxlength="100" required></label><label>Mã tỉnh / thành<input name="code" maxlength="20" required></label><button type="submit">Thêm tỉnh / thành</button></form></details>
+          <section class="card" data-workspace-section="provinces" aria-labelledby="province-list-title"><div class="admin-section-title"><h2 id="province-list-title">Danh mục tỉnh / thành</h2></div><div class="admin-table-scroll"><table class="admin-table"><thead><tr><th>ID</th><th>Mã</th><th>Tỉnh / thành</th></tr></thead><tbody id="province-catalog"><tr><td colspan="3" class="admin-empty">Đang tải danh mục…</td></tr></tbody></table></div></section>
+          <details id="cinemas" data-workspace-section="cinemas" class="card" open><summary>Thêm hoặc sửa rạp</summary><form id="cinema-form"><label>Tỉnh / thành<select name="provinceId" id="cinema-province" required></select></label><label>Tên rạp<input name="cinemaName" maxlength="150" required></label><label>Địa chỉ<input name="address" maxlength="255" required></label><label>Hotline<input name="hotline" maxlength="20"></label><div class="form-row"><label>Vĩ độ<input name="latitude" type="number" min="-90" max="90" step="0.0000001"></label><label>Kinh độ<input name="longitude" type="number" min="-180" max="180" step="0.0000001"></label></div><label>Trạng thái<select name="status"><option value="ACTIVE">Hoạt động</option><option value="MAINTENANCE">Bảo trì</option><option value="ARCHIVED">Ngừng hoạt động</option></select></label><div class="form-actions"><button type="submit">Thêm rạp mới</button><button id="update-cinema" type="button" class="secondary" disabled>Lưu rạp đang chọn</button></div><p class="help">Chọn rạp ở phía trên để nạp thông tin cần sửa.</p></form></details>
+          <details id="auditoriums" data-workspace-section="auditoriums" class="card" open><summary>Thêm phòng cho rạp đang chọn</summary><form id="auditorium-form"><label>Tên phòng<input name="name" maxlength="100" required></label><div class="form-row"><label>Số hàng<input name="totalRows" type="number" min="1" max="100" value="8" required></label><label>Số cột<input name="totalCols" type="number" min="1" max="100" value="12" required></label></div><label>Trạng thái<select name="status"><option value="ACTIVE">Hoạt động</option><option value="MAINTENANCE">Bảo trì</option><option value="INACTIVE">Ngừng hoạt động</option></select></label><button type="submit">Thêm phòng</button></form></details>
+          <details id="seat-types" data-workspace-section="seat-types" class="card"><summary>Danh mục loại ghế</summary><ul id="seat-type-list" class="type-list"></ul><form id="seat-type-form"><label>Tên loại ghế<input name="typeName" maxlength="50" placeholder="Ví dụ: PREMIUM" required></label><div class="form-row"><label>Phụ thu mặc định (đ)<input name="defaultSurcharge" type="number" min="0" max="9999999999.99" step="0.01" value="0" required></label><label>Số ô chiếm chỗ<select name="seatSpan"><option value="1">1 — ghế đơn</option><option value="2">2 — ghế đôi</option></select></label></div><button type="submit">Thêm loại ghế</button></form></details>
+          <details data-workspace-section="seat-map" data-legacy-seat-generator class="card" open><summary>Tạo sơ đồ cho phòng đang chọn</summary><form id="generate-form"><label>Loại ghế mặc định<select id="default-seat-type" name="defaultSeatTypeId" required></select></label><label>Loại ghế riêng theo hàng (tùy chọn)<input name="rowTypes" placeholder="Ví dụ: C:2,D:2,H:3"></label><p class="help">Dùng mã loại ghế trong mục Loại ghế của menu bên trái. Hàng bắt đầu từ A. Ghế đôi chiếm 2 cột; hàng ghế đôi cần số cột chẵn. Chỉ tạo khi phòng chưa có ghế.</p><button type="submit">Tạo sơ đồ ghế</button></form></details>
+          <details data-workspace-section="auditoriums" class="card" open><summary>Cập nhật trạng thái phòng</summary><form id="room-status-form"><label>Trạng thái phòng đang chọn<select name="status"><option value="ACTIVE">Hoạt động</option><option value="MAINTENANCE">Bảo trì</option><option value="INACTIVE">Ngừng hoạt động</option></select></label><button type="submit">Lưu trạng thái phòng</button><p class="help">Để cập nhật ghế hỏng hoặc ghế khóa, chọn ghế trên sơ đồ và lưu trạng thái.</p></form></details>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>BBCinema · Quản lý cơ sở rạp chiếu</footer>
+</body>
+</html>

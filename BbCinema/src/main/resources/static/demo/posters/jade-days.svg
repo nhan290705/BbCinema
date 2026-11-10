@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs><linearGradient id="jade" x2="0" y2="1"><stop stop-color="#e3e5bb"/><stop offset=".6" stop-color="#87bf9b"/><stop offset="1" stop-color="#1e6958"/></linearGradient></defs>
+  <rect width="400" height="600" fill="url(#jade)"/><circle cx="274" cy="260" r="79" fill="#f4ebbd"/><path d="M0 416L73 280L146 391L236 298L345 435L400 339V600H0Z" fill="#6fa58a"/><path d="M0 485L98 361L199 486L288 376L400 470V600H0Z" fill="#367e69"/><path d="M0 560Q115 468 204 526Q298 451 400 510V600H0Z" fill="#185847"/>
+  <path d="M231 404Q167 439 231 461Q300 485 189 505Q138 514 189 536L270 600H321L240 538Q201 520 260 506Q332 482 274 458Q216 441 264 420Z" fill="#b6d7b3"/>
+  <path d="M69 459V412M69 439L49 422M69 426L84 410M337 504V438M337 467L317 450M337 453L351 437" fill="none" stroke="#bad7ac" stroke-width="2"/><path d="M78 267L92 262L106 267M129 234L139 230L149 234" fill="none" stroke="#427a62" stroke-width="2"/>
+  <text x="30" y="40" fill="#52725c" font-family="Arial,sans-serif" font-size="10" letter-spacing="3">BBCINEMA · PHIM MẪU</text><text x="29" y="94" fill="#245441" font-family="Georgia,serif" font-size="36">Những Ngày</text><text x="29" y="136" fill="#245441" font-family="Georgia,serif" font-size="36">Màu Ngọc</text><text x="200" y="561" text-anchor="middle" fill="#e0e5b8" font-family="Arial,sans-serif" font-size="9" letter-spacing="2">ĐI CHẬM ĐỂ THẤY NHIỀU HƠN</text>
+</svg>

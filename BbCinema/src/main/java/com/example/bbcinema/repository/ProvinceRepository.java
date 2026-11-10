@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface ProvinceRepository extends JpaRepository<Province, Integer> {
+    boolean existsByCodeIgnoreCase(String code);
 
     @Override
     Optional<Province> findById(Integer id);

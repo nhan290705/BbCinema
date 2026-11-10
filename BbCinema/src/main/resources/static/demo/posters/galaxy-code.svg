@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs><linearGradient id="space" x2="1" y2="1"><stop stop-color="#151d40"/><stop offset=".6" stop-color="#464776"/><stop offset="1" stop-color="#927782"/></linearGradient><radialGradient id="planet"><stop stop-color="#b6dfce"/><stop offset="1" stop-color="#537d9a"/></radialGradient></defs>
+  <rect width="400" height="600" fill="url(#space)"/><g fill="#e0dfd8"><circle cx="50" cy="222" r="1.5"/><circle cx="325" cy="164" r="2"/><circle cx="75" cy="396" r="2"/><circle cx="354" cy="401" r="1.5"/><circle cx="298" cy="462" r="1.5"/><circle cx="165" cy="183" r="1"/><circle cx="53" cy="520" r="1"/></g>
+  <circle cx="203" cy="315" r="103" fill="url(#planet)"/><path d="M113 263Q214 305 295 266M104 289Q209 345 305 295M103 331Q209 380 300 337M122 373Q206 414 278 381" fill="none" stroke="#2d536e" stroke-opacity=".35" stroke-width="9"/>
+  <ellipse cx="203" cy="315" rx="174" ry="32" transform="rotate(-30 203 315)" fill="none" stroke="#d5c4ac" stroke-width="8"/><ellipse cx="203" cy="315" rx="181" ry="39" transform="rotate(-30 203 315)" fill="none" stroke="#d5c4ac" stroke-opacity=".3"/>
+  <path d="M193 460L200 429L207 460L220 481H180Z" fill="#e9dac2"/><path d="M195 484L200 511L205 484" fill="#d3a277"/>
+  <text x="30" y="40" fill="#b9c2d4" font-family="Arial,sans-serif" font-size="10" letter-spacing="3">BBCINEMA · PHIM MẪU</text><text x="29" y="94" fill="#efeadf" font-family="Arial,sans-serif" font-size="35" font-weight="700" letter-spacing="1">MẬT MÃ</text><text x="29" y="137" fill="#efeadf" font-family="Arial,sans-serif" font-size="35" font-weight="700" letter-spacing="1">THIÊN HÀ</text>
+  <text x="200" y="561" text-anchor="middle" fill="#d4cfd5" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.8">ĐI XA HƠN NHỮNG ĐIỀU ĐÃ BIẾT</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 760" fill="none">
+  <defs>
+    <linearGradient id="arch" x1="450" y1="255" x2="450" y2="690" gradientUnits="userSpaceOnUse"><stop stop-color="#0ABAB5" stop-opacity=".05"/><stop offset="1" stop-color="#0ABAB5" stop-opacity=".32"/></linearGradient>
+    <radialGradient id="moon"><stop stop-color="#F5F7D8"/><stop offset=".65" stop-color="#BBEED8"/><stop offset="1" stop-color="#76DCCE"/></radialGradient>
+    <linearGradient id="beam" x1="409" y1="310" x2="315" y2="675" gradientUnits="userSpaceOnUse"><stop stop-color="#9EE8D2" stop-opacity=".28"/><stop offset="1" stop-color="#9EE8D2" stop-opacity="0"/></linearGradient>
+    <linearGradient id="step" x1="520" y1="500" x2="285" y2="700" gradientUnits="userSpaceOnUse"><stop stop-color="#4FC9B9"/><stop offset="1" stop-color="#0B514D"/></linearGradient>
+    <linearGradient id="ticket" x1="177" y1="510" x2="380" y2="630" gradientUnits="userSpaceOnUse"><stop stop-color="#FCF2D8"/><stop offset="1" stop-color="#DDDDC0"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="33"/></filter>
+    <filter id="shadow" x="-60%" y="-100%" width="240%" height="340%"><feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#001F20" flood-opacity=".5"/></filter>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#D9F6E3" opacity=".15"/></pattern>
+  </defs>
+  <path d="M-40 610C100 497 146 492 263 545C388 601 465 717 729 518" stroke="#A5E0CD" stroke-opacity=".08"/>
+  <path d="M-20 636C128 529 168 532 278 579C415 638 494 734 735 553" stroke="#A5E0CD" stroke-opacity=".08"/>
+  <circle cx="463" cy="380" r="148" fill="#19B5A4" opacity=".2" filter="url(#glow)"/>
+  <path d="M291 664V363C291 265 345 216 424 216C503 216 558 265 558 363V664" stroke="#98E2CF" stroke-opacity=".22"/>
+  <path d="M309 664V364C309 279 355 235 424 235C493 235 540 279 540 364V664" fill="url(#arch)" stroke="#98E2CF" stroke-opacity=".3"/>
+  <path d="M329 662V365C329 296 366 256 424 256C482 256 520 296 520 365V662" stroke="#98E2CF" stroke-opacity=".13"/>
+  <circle cx="424" cy="366" r="63" fill="url(#moon)"/>
+  <circle cx="424" cy="366" r="77" stroke="#B9EBD1" stroke-opacity=".15"/>
+  <path d="M368 393L196 685H579L479 393C449 436 397 437 368 393Z" fill="url(#beam)"/>
+  <path d="M508 448V480H484V512H460V544H436V576H412V608H388V640H364V672H551V448H508Z" fill="#0A423E"/>
+  <path d="M508 448H551V464H508V448ZM484 480H551V496H484V480ZM460 512H551V528H460V512ZM436 544H551V560H436V544ZM412 576H551V592H412V576ZM388 608H551V624H388V608ZM364 640H551V656H364V640Z" fill="url(#step)"/>
+  <path d="M508 448H551M484 480H551M460 512H551M436 544H551M412 576H551M388 608H551M364 640H551" stroke="#90D8C1" stroke-opacity=".5"/>
+  <ellipse cx="307" cy="648" rx="145" ry="21" fill="#022A28" opacity=".6"/>
+  <g transform="rotate(-12 280 565)" filter="url(#shadow)">
+    <path d="M172 511H381V540C370 540 370 558 381 558V593H172V564C183 564 183 546 172 546V511Z" fill="url(#ticket)"/>
+    <path d="M325 516V588" stroke="#406B5D" stroke-opacity=".5" stroke-dasharray="3 4"/>
+    <path d="M188 524H309M188 580H309" stroke="#285649" stroke-opacity=".15"/>
+    <text x="190" y="548" fill="#16443A" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="-.5">Bbcinema</text>
+    <text x="190" y="567" fill="#456B5A" font-family="Arial,sans-serif" font-size="7" letter-spacing="2">YOUR NEXT GREAT STORY</text>
+    <path d="M340 529H343V573H340ZM346 529H348V573H346ZM352 529H356V573H352ZM360 529H362V573H360ZM366 529H369V573H366" fill="#254E42"/>
+  </g>
+  <path d="M199 409V427M190 418H208" stroke="#B7E7C9" stroke-width="1.3"/>
+  <path d="M566 246V258M560 252H572" stroke="#B7E7C9" stroke-opacity=".7"/>
+  <circle cx="585" cy="448" r="2.5" fill="#D7EBC5"/>
+  <circle cx="282" cy="323" r="2" fill="#D7EBC5" opacity=".6"/>
+  <path d="M91 680H578" stroke="#A0D9C1" stroke-opacity=".15"/>
+  <path d="M616 172V670" stroke="#8DD9C4" stroke-opacity=".12" stroke-dasharray="2 9"/>
+  <path d="M79 180H601V680H79Z" fill="url(#grain)" opacity=".35"/>
+</svg>

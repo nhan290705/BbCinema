@@ -9,4 +9,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Override
     Optional<User> findById(Long id);
+
+    boolean existsByEmailIgnoreCase(String email);
+
+    boolean existsByPhone(String phone);
+
+    Optional<User> findByEmailIgnoreCase(String email);
+
 }
