@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý phim · BBCinema</title>
+  <link rel="stylesheet" href="/movies.css"><script src="/movie-media.js" defer></script><script src="/movies.js" defer></script>
+<link rel="stylesheet" href="/admin.css"><script src="/admin-shell.js" defer></script></head>
+<body class="admin-workspace" data-page="management" data-admin-page="movies">
+  <header class="topbar"><a class="brand" href="/admin.html">BB<span>CINEMA</span></a><nav aria-label="Điều hướng"><a href="/showtime-management.html">Quản lý lịch chiếu</a><a href="/cinema-management.html">Rạp & phòng</a><span id="account-label"></span><button id="logout" class="quiet" hidden>Đăng xuất</button></nav></header>
+  <main>
+    <div class="page-heading"><p class="eyebrow">QUẢN TRỊ BBCINEMA</p><h1>Phim và thể loại</h1><p>Cập nhật nội dung, hình ảnh và trạng thái hiển thị của phim.</p></div>
+    <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+    <section id="login-panel" class="card login-card"><div><h2>Đăng nhập quản trị</h2><p>Dùng tài khoản Admin hiện có để quản lý danh mục phim.</p></div><form id="login-form"><label>Email<input name="email" type="email" autocomplete="username" maxlength="120" required></label><label>Mật khẩu<input name="password" type="password" autocomplete="current-password" required></label><button type="submit">Đăng nhập</button></form></section>
+    <div id="management-workspace" hidden>
+      <div class="management-layout">
+        <section class="card editor-card" data-workspace-section="movies" aria-labelledby="editor-title">
+          <div class="section-heading"><h2 id="editor-title">Thêm phim mới</h2><button id="new-movie" class="secondary" type="button">Tạo mới</button></div>
+          <form id="movie-form">
+            <label>Tên phim<input name="title" maxlength="200" required></label>
+            <label>Nội dung<textarea name="description" rows="5" maxlength="20000"></textarea></label>
+            <div class="form-row"><label>Thời lượng (phút)<input name="durationMinutes" type="number" min="1" max="600" required></label><label>Giới hạn độ tuổi<select name="ageRating"><option value="P">P</option><option value="K">K</option><option value="T13">T13</option><option value="T16">T16</option><option value="T18">T18</option></select></label></div>
+            <label>Đạo diễn<input name="director" maxlength="150"></label>
+            <label>Diễn viên<textarea name="castList" rows="2" maxlength="5000"></textarea></label>
+            <fieldset class="movie-media-editor"><legend>Poster phim</legend>
+              <div class="poster-upload"><div class="poster-upload-preview"><span id="poster-placeholder">POSTER<br>BBCINEMA</span><img id="poster-preview" alt="Xem trước poster" hidden></div><div class="poster-upload-controls">
+                <label for="poster-file">Chọn poster từ thiết bị<input id="poster-file" type="file" accept="image/jpeg,image/png,.jpg,.jpeg,.png"></label>
+                <p id="poster-file-info" class="help" role="status">JPG hoặc PNG, tối đa 5 MB. Ảnh được tải lên khi bạn lưu phim.</p>
+                <div class="poster-upload-actions"><button type="button" id="poster-cancel" class="secondary" hidden>Bỏ ảnh vừa chọn</button><button type="button" id="poster-remove" class="secondary">Xóa poster khỏi phim</button></div>
+              </div></div>
+              <label>Đường dẫn poster / URL ảnh<input name="posterUrl" id="poster-url" type="text" inputmode="url" maxlength="255" placeholder="Tự cập nhật sau khi lưu ảnh, hoặc nhập https://…"></label>
+              <p class="help">Có thể dùng ảnh từ thiết bị hoặc nhập liên kết ảnh có sẵn.</p>
+            </fieldset>
+            <fieldset class="movie-media-editor"><legend>Trailer</legend>
+              <label>Liên kết trailer<input name="trailerUrl" id="trailer-url" type="url" maxlength="255" placeholder="https://www.youtube.com/watch?v=…"></label>
+              <p class="help">Dán liên kết video YouTube hoặc video MP4/WebM. Liên kết khác được mở trong tab mới.</p>
+              <button type="button" id="preview-trailer" class="secondary">Xem trước trailer</button>
+              <div id="trailer-preview" class="movie-trailer" hidden></div>
+            </fieldset>
+            <div class="form-row"><label>Ngày khởi chiếu<input name="releaseDate" type="date"></label><label>Trạng thái<select name="status"><option value="COMING_SOON">Sắp chiếu</option><option value="NOW_SHOWING">Đang chiếu</option><option value="ENDED">Đã kết thúc</option><option value="HIDDEN">Ẩn</option></select></label></div>
+            <fieldset><legend>Thể loại (chọn ít nhất một)</legend><div id="genre-checkboxes" class="genre-checkboxes"></div><p id="no-genres" class="help">Tạo thể loại ở bên cạnh trước khi lưu phim.</p></fieldset>
+            <button id="save-movie" type="submit">Lưu phim mới</button>
+          </form>
+        </section>
+        <aside id="genre-panel" class="card genre-card" data-workspace-section="genres"><div class="section-heading"><h2>Thể loại</h2><button id="new-genre" type="button" class="secondary">Tạo mới</button></div><form id="genre-form"><label id="genre-form-label">Tên thể loại<input name="genreName" maxlength="100" required></label><button id="save-genre" type="submit">Thêm thể loại</button></form><ul id="genre-list" class="genre-list"></ul><p class="help">Thể loại đang gán cho phim cần được bỏ khỏi các phim trước khi xóa.</p></aside>
+      </div>
+      <section class="admin-movies" data-workspace-section="movies" aria-labelledby="admin-list-title">
+        <div class="section-heading"><div><p class="eyebrow">DANH MỤC PHIM</p><h2 id="admin-list-title">Chọn phim để chỉnh sửa</h2></div><p id="result-count" aria-live="polite"></p></div>
+        <form id="filter-form" class="card filters" role="search"><label>Tên phim<input name="title" id="title-filter" type="search" maxlength="200" placeholder="Nhập tên phim…"></label><label>Thể loại<select name="genreId" id="genre-filter"><option value="">Tất cả thể loại</option></select></label><label>Trạng thái<select name="status" id="status-filter"><option value="">Tất cả trạng thái</option><option value="COMING_SOON">Sắp chiếu</option><option value="NOW_SHOWING">Đang chiếu</option><option value="ENDED">Đã kết thúc</option><option value="HIDDEN">Ẩn</option></select></label><button type="submit">Lọc phim</button></form>
+        <div id="movie-list" class="movie-grid" aria-busy="false"></div><p id="list-empty" class="empty" hidden></p>
+        <nav class="pagination" aria-label="Phân trang"><button id="previous-page" class="secondary" disabled>← Trang trước</button><span id="page-label">Trang 0 / 0</span><button id="next-page" class="secondary" disabled>Trang sau →</button></nav>
+      </section>
+    </div>
+  </main>
+  <footer>BBCinema · Quản lý nội dung phim</footer>
+</body>
+</html>

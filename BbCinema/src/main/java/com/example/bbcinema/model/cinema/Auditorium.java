@@ -25,6 +25,21 @@ public class Auditorium {
     @Column(name = "total_cols", nullable = false)
     private Integer totalCols;
 
+    @Column(name = "seat_width")
+    private Integer seatWidth;
+
+    @Column(name = "seat_height")
+    private Integer seatHeight;
+
+    @Column(name = "column_gap")
+    private Integer columnGap;
+
+    @Column(name = "row_gap")
+    private Integer rowGap;
+
+    @Column(name = "screen_position", length = 10)
+    private String screenPosition;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 30)
     private AuditoriumStatus status = AuditoriumStatus.ACTIVE;

@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface CinemaRepository extends JpaRepository<Cinema, Long> {
+    java.util.List<Cinema> findByProvinceIdOrderByCinemaNameAscIdAsc(Integer provinceId);
 
     @Override
     Optional<Cinema> findById(Long id);

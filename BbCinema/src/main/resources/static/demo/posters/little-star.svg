@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#b6594c"/><stop offset=".65" stop-color="#eab47e"/><stop offset="1" stop-color="#f4d39a"/></linearGradient></defs>
+  <rect width="400" height="600" fill="url(#sky)"/><circle cx="200" cy="287" r="117" fill="#edbe8a"/><circle cx="200" cy="287" r="99" fill="#f3cf99"/>
+  <path d="M200 215L218 262L270 265L229 298L242 350L200 321L158 350L171 298L130 265L182 262Z" fill="#fff1c5"/><circle cx="186" cy="282" r="4" fill="#96764c"/><circle cx="215" cy="282" r="4" fill="#96764c"/><path d="M191 296Q201 306 211 296" fill="none" stroke="#c19862" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 600V451L122 391L200 451V600Z" fill="#8c5545"/><path d="M169 600V448L265 371L361 448V600Z" fill="#b46b50"/><path d="M24 454L121 377L216 454" fill="none" stroke="#5a5143" stroke-width="14" stroke-linejoin="round"/><path d="M151 451L265 355L380 451" fill="none" stroke="#5a5143" stroke-width="14" stroke-linejoin="round"/>
+  <rect x="97" y="454" width="45" height="62" rx="22" fill="#f5d89e"/><rect x="237" y="444" width="51" height="73" rx="25" fill="#f5d89e"/><path d="M118 455V516M99 483H140M262 444V517M239 479H287" stroke="#b37f5b" stroke-width="3"/>
+  <text x="30" y="40" fill="#f4d7b2" font-family="Arial,sans-serif" font-size="10" letter-spacing="3">BBCINEMA · PHIM MẪU</text><text x="29" y="95" fill="#fff0cc" font-family="Georgia,serif" font-size="36">Nhà Có</text><text x="29" y="137" fill="#fff0cc" font-family="Georgia,serif" font-size="36">Một Vì Sao</text><text x="200" y="563" text-anchor="middle" fill="#ffe8be" font-family="Arial,sans-serif" font-size="9" letter-spacing="2">ĐIỀU KỲ DIỆU Ở NGAY BÊN MÌNH</text>
+</svg>

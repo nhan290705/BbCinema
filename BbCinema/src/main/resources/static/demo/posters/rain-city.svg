@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#112f41"/><stop offset="1" stop-color="#4f9490"/></linearGradient><linearGradient id="street" x2="0" y2="1"><stop stop-color="#1b494d"/><stop offset="1" stop-color="#132d39"/></linearGradient></defs>
+  <rect width="400" height="600" fill="url(#sky)"/><circle cx="290" cy="212" r="67" fill="#b4ded0"/>
+  <path d="M0 328V249H42V290H69V217H116V281H153V236H189V332H228V263H263V296H285V239H331V277H365V221H400V600H0Z" fill="#204b56"/>
+  <path d="M0 390V325H62V358H105V286H155V384H197V326H232V382H275V313H336V362H400V600H0Z" fill="#113b46"/>
+  <path d="M171 380L48 600H356L221 380Z" fill="url(#street)"/><path d="M190 404L155 600M211 404L260 600" stroke="#a5cfb9" stroke-opacity=".4" stroke-width="2"/>
+  <g stroke="#95cbca" opacity=".27"><path d="M39 162L27 196M88 193L77 227M146 160L134 194M209 176L197 210M359 158L347 192M59 414L47 448M314 418L302 452M349 489L337 523M105 479L93 513"/></g>
+  <path d="M155 420Q199 374 244 420Z" fill="#e3bd75"/><path d="M200 419V472Q200 483 210 483" fill="none" stroke="#e3bd75" stroke-width="3"/><path d="M182 432H201L210 484H178Z" fill="#b5c5b5"/><path d="M185 481L176 520M202 481L210 520" stroke="#a5beb2" stroke-width="6"/>
+  <text x="30" y="40" fill="#a3c9c9" font-family="Arial,sans-serif" font-size="10" letter-spacing="3">BBCINEMA · PHIM MẪU</text><text x="29" y="93" fill="#e2eee1" font-family="Georgia,serif" font-size="35">Thành Phố</text><text x="29" y="133" fill="#e2eee1" font-family="Georgia,serif" font-size="35">Sau Cơn Mưa</text>
+  <text x="200" y="563" text-anchor="middle" fill="#b0cfc7" font-family="Arial,sans-serif" font-size="9" letter-spacing="2">CÓ NHỮNG CUỘC GẶP LÀ BÌNH YÊN</text>
+</svg>

@@ -6,6 +6,7 @@ import java.util.Optional;
 
 public interface ShowtimePriceRepository
         extends JpaRepository<ShowtimePrice, Long> {
+    java.util.List<ShowtimePrice> findByShowtimeIdOrderBySeatTypeIdAsc(Long showtimeId);
 
     @Override
     Optional<ShowtimePrice> findById(Long id);

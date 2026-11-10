@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs><linearGradient id="ocean" x2="0" y2="1"><stop stop-color="#9fd3cd"/><stop offset=".3" stop-color="#6bafbb"/><stop offset="1" stop-color="#123e63"/></linearGradient></defs>
+  <rect width="400" height="600" fill="url(#ocean)"/><circle cx="303" cy="231" r="56" fill="#d9e8c7"/>
+  <path d="M0 316Q100 278 200 316T400 316V600H0Z" fill="#42869f"/><path d="M0 366Q100 316 200 366T400 366V600H0Z" fill="#286980"/><path d="M0 436Q100 386 200 436T400 436V600H0Z" fill="#174e6d"/>
+  <path d="M83 388Q125 350 194 373Q230 387 270 376L289 352L294 379L316 389L288 400Q230 449 158 424Q99 429 83 388Z" fill="#a5c7bf"/><path d="M116 394Q179 413 246 393" fill="none" stroke="#d4ded0" stroke-opacity=".6" stroke-width="2"/><circle cx="107" cy="391" r="3" fill="#1d5060"/>
+  <path d="M97 280L123 266L149 280M36 247L52 238L69 247" fill="none" stroke="#e0e8d1" stroke-width="2"/><g fill="#afd9cc" opacity=".4"><circle cx="128" cy="348" r="3"/><circle cx="133" cy="331" r="2"/><circle cx="124" cy="319" r="1.5"/></g>
+  <text x="30" y="40" fill="#275c6d" font-family="Arial,sans-serif" font-size="10" letter-spacing="3">BBCINEMA · PHIM MẪU</text><text x="29" y="95" fill="#174762" font-family="Georgia,serif" font-size="36">Bên Kia</text><text x="29" y="137" fill="#174762" font-family="Georgia,serif" font-size="36">Đại Dương</text><text x="200" y="561" text-anchor="middle" fill="#c5ded4" font-family="Arial,sans-serif" font-size="9" letter-spacing="2">LẮNG NGHE NHỮNG ĐIỀU CHƯA KỂ</text>
+</svg>
